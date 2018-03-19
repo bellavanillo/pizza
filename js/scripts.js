@@ -16,14 +16,13 @@ var index = outputArray.indexOf(i);
       outputArray.push(i);
     }
   }
-  alert ("outputArray");
-  //return outputArray;
+  // DEBUG:
 };
 
 $(document).ready(function(){
   $("form.form1").submit(function(event){
     event.preventDefault();
-    debugger
+     $("#output").empty();
     var userInput = parseInt($("input#number").val());
     var newName = callFunction(userInput);
 
