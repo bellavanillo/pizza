@@ -14,11 +14,11 @@ Pizza.prototype.totalTopping = function(){
 
 Pizza.prototype.pizzaPrice = function(){
   if(this.size === "s"){
-    this.price = 5 + this.numberTopping;
+    this.price = 5 + this.topping;
   }else if (this.size === "md"){
-    this.price =  10 + this.numberTopping;
+    this.price =  10 + this.topping;
   } else {
-    this.price = 15 + this.numberTopping;
+    this.price = 15 + this.topping;
   }
 }
 
@@ -26,8 +26,6 @@ Pizza.prototype.pizzaPrice = function(){
 $(document).ready(function(){
   $("form#form").submit(function(event){
     event.preventDefault();
-
-
     $("input:checkbox[name=size]:checked").each(function(){
       var sizes = parseInt($(this).val());
     });
@@ -38,7 +36,8 @@ $(document).ready(function(){
 
     $("input:checkbox[name=topping]:checked").each(function(){
       var toppings = parseInt($(this).val());
-    });
 
+    });
+    $("#receipt").show();
   });
 });
