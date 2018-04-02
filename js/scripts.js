@@ -1,34 +1,44 @@
-//Biz logic
-var callFunction = function(userInput){
-  var outputArray = [];
-  for (var i = 1; i <= userInput; i++){
-var index = outputArray.indexOf(i);
-    if (i % 15 === 0){
-      outputArray.slice(index, 0);
-      outputArray.push("pingpong");
-    }else if ( i % 3 === 0){
-      outputArray.slice(index, 0);
-      outputArray.push("ping");
-    }else if (i % 5 ===0){
-      outputArray.slice(index, 0);
-      outputArray.push("pong");
-    }else {
-      outputArray.push(i);
-    }
+//business logic
+function Pizza (toppings, sizes, sauces){
+  this.size = sizes;
+  this.topping = toppings;
+  this.sauce = sauces;
+  this.price;
+  this.numberTopping
+
+}
+
+Pizza.prototype.totalTopping = function(){
+  this.numberTopping = this.topping.length;
+}
+
+Pizza.prototype.pizzaPrice = function(){
+  if(this.size === "s"){
+    this.price = 5 + this.numberTopping;
+  }else if (this.size === "md"){
+    this.price =  10 + this.numberTopping;
+  } else {
+    this.price = 15 + this.numberTopping;
   }
-  // DEBUG:
-};
+}
 
+//UI Logic
 $(document).ready(function(){
-  $("form.form1").submit(function(event){
+  $("form#form").submit(function(event){
     event.preventDefault();
-     $("#output").empty();
-    var userInput = parseInt($("input#number").val());
-    var newName = callFunction(userInput);
 
-    newName.forEach(function(value){
-      $("#output").append('<li>' + value + '</li>');
-    })
-    //display all the numbers with code here (.append();)
+
+    $("input:checkbox[name=size]:checked").each(function(){
+      var sizes = parseInt($(this).val());
+    });
+
+    $("input:checkbox[name=sauce]:checked").each(function(){
+      var sauces = parseInt($(this).val());
+    });
+
+    $("input:checkbox[name=topping]:checked").each(function(){
+      var toppings = parseInt($(this).val());
+    });
+
   });
 });

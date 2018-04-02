@@ -5,38 +5,59 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Ping-Pong</title>
+    <title>Pizza</title>
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Ping-Pong</h1>
+        <h1>Pizza Maker</h1>
       </div>
+      <img src="img/pizza.jpg" alt="pizza">
 
-        <h3>About Ping Pong</h3>
-        <h4>Created by:</h4>
-        <p>Bella Vanillo</p>
-        <h4>GitHub Username/URL:</h4>
-        <p>bellavanillo</p>
-        <h4>Level 2 Test for:</h4>
-        <p>Javascript</p>
+      <form class="form">
 
-      <h2>Let's play!</h2>
-      <h3>Rules:</h3>
-      <p>Ping pong will count up to your number from 1 with the following exceptions:</p>
-      <ol>
-        <li>Numbers divisble by 3 become "ping"</li>
-        <li>Numbers divisble by 5 become "pong"</li>
-        <li>Numbers divisble by 3 and 5 become "pingpong"</li>
-        <form class="form1">
-          <label for="name">Enter you number here:</label>
-            <input id="number" type="text">
-            <button type="button" name="button">Ping Pong!</button>
-        </form>
-      </ol>
-      <ul id="output">
-        <li></li>
-      </ul>
+
+        <h4>Please choose a size:</h4>
+        <div class="sizes">
+          <label>
+          <input type="checkbox" name="size" value="s">Small<br>
+          <input type="checkbox" name="size"  value="md">Medium<br>
+          <input type="checkbox" name="size"  value="lg">Large<br>
+          </label>
+        </div>
+
+
+        <h4>Please choose a sauce:</h4>
+        <div class="sauces">
+          <label>
+          <input type="checkbox" name="sauce" value="0">Marinara<br>
+          <input type="checkbox" name="sauce"  value="0">Garlic Cream<br>
+          <input type="checkbox" name="sauce"  value="0">BBQ<br>
+          </label>
+        </div>
+
+
+        <h4>Check all pizza toppings that you want:</h4>
+        <div class="toppings">
+          <label>
+          <input type="checkbox" name="topping" value="1">Cheese<br>
+          <input type="checkbox" name="topping"  value="1">Pepperoni<br>
+          <input type="checkbox" name="topping"  value="1">Sausage<br>
+          <input type="checkbox" name="topping"  value="1">Pineapple<br>
+          <input type="checkbox" name="topping"  value="1">Artichoke<br>
+          <input type="checkbox" name="topping"  value="1">Black Olives<br>
+          <input type="checkbox" name="topping"  value="1">Bell Pepper<br>
+          <input type="checkbox" name="topping"  value="1">Red Onion<br>
+          <input type="checkbox" name="topping"  value="1">Mushrooms<br>
+          <input type="checkbox" name="topping"  value="1">Spinach<br>
+          <input type="checkbox" name="topping"  value="1">Garlic<br>
+          </label>
+        </div>
+        <button type="submit" name="button">Make my pizza!</button>
+      </form>
+      <div class="results">
+        Thank you for your order! Here is your receipt: <span id=""> </span>
+      </div>
     </div>
   </body>
 </html>
