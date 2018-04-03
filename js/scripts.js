@@ -1,18 +1,12 @@
 //business logic
-function Pizza (toppings, sizes, sauces){
+function Pizza (toppings, sizes, price){
   this.size = sizes;
   this.topping = toppings;
-  this.sauce = sauces;
-  this.price;
-  this.numberTopping
-
-}
-
-Pizza.prototype.totalTopping = function(){
-  this.numberTopping = this.topping.length;
+  this.price = price;
 }
 
 Pizza.prototype.pizzaPrice = function(){
+  var total = 0;
   if(this.size === "s"){
     this.price = 5 + this.topping;
   }else if (this.size === "md"){
@@ -20,23 +14,38 @@ Pizza.prototype.pizzaPrice = function(){
   } else {
     this.price = 15 + this.topping;
   }
+  if (toppingsArray.length < 1){
+    total += 0;
+    this.price = total;
+  } else {
+    for (var i = 0; i < toppingsArray.length; i++) {
+      total += 1;
+      this.price = total;
+  }
+  pizza.prototype.cost = function (toppings, price, sizes) {
+    return "$" + this.price + " " + this.size + "pizza, with" + this.toppings;
+  }
 }
 
 //UI Logic
 $(document).ready(function(){
-  $("form#form").submit(function(event){
+  $("form.form").submit(function(event){
+    debugger;
     event.preventDefault();
     $("input:checkbox[name=size]:checked").each(function(){
       var sizes = parseInt($(this).val());
     });
 
-    $("input:checkbox[name=sauce]:checked").each(function(){
-      var sauces = parseInt($(this).val());
-    });
-
     $("input:checkbox[name=topping]:checked").each(function(){
       var toppings = parseInt($(this).val());
+      var newToppings = [];
+      for(var i=0; i< toppings.length; i++) {
+          newToppings.push(toppings[i].val());
+      }
 
+      var newPizza = new Pizza (toppings, price, sizes)
+      var price = newPizza.pizzaPrice(sizes, newToppings);
+      var output = newPizza.cost(sizes, newToppings, price);
     });
     $("#receipt").show();
   });
