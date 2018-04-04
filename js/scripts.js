@@ -3,9 +3,10 @@ function Pizza (toppings, sizes, price){
   this.size = sizes;
   this.topping = toppings;
   this.price = price;
+  debugger;
 }
 
-Pizza.prototype.pizzaPrice = function(){
+Pizza.prototype.pizzaPrice = function(size, toppingsArray){
   var total = 0;
   if(this.size === "s"){
     this.price = 5 + this.topping;
@@ -26,7 +27,7 @@ Pizza.prototype.pizzaPrice = function(){
     return "$" + this.price + " " + this.size + "pizza, with" + this.toppings;
   }
 }
-
+}
 //UI Logic
 $(document).ready(function(){
   $("form.form").submit(function(event){
@@ -46,7 +47,9 @@ $(document).ready(function(){
       var newPizza = new Pizza (toppings, price, sizes)
       var price = newPizza.pizzaPrice(sizes, newToppings);
       var output = newPizza.cost(sizes, newToppings, price);
+      $("#receipt").show();
+      $(".form").hide();
     });
-    $("#receipt").show();
+
   });
 });
