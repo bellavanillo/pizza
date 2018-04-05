@@ -16,12 +16,12 @@
 
       <form class="form">
         <h4>Please choose a size:</h4>
-        <div class="sizes">
-          <label>
-          <input type="checkbox" name="size" value="s">Small<br>
-          <input type="checkbox" name="size"  value="md">Medium<br>
-          <input type="checkbox" name="size"  value="lg">Large<br>
-          </label>
+        <div class="size">
+          <select id="pizza-size">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
         </div>
         <h4>Please choose a sauce:</h4>
         <div class="sauces">
@@ -34,17 +34,17 @@
         <h4>Check all pizza toppings that you want:</h4>
         <div class="toppings">
           <label>
-          <input type="checkbox" name="topping" value="1">Cheese<br>
-          <input type="checkbox" name="topping"  value="1">Pepperoni<br>
-          <input type="checkbox" name="topping"  value="1">Sausage<br>
-          <input type="checkbox" name="topping"  value="1">Pineapple<br>
-          <input type="checkbox" name="topping"  value="1">Artichoke<br>
-          <input type="checkbox" name="topping"  value="1">Black Olives<br>
-          <input type="checkbox" name="topping"  value="1">Bell Pepper<br>
-          <input type="checkbox" name="topping"  value="1">Red Onion<br>
-          <input type="checkbox" name="topping"  value="1">Mushrooms<br>
-          <input type="checkbox" name="topping"  value="1">Spinach<br>
-          <input type="checkbox" name="topping"  value="1">Garlic<br>
+          <input type="checkbox" name="toppings" value="Cheese">Cheese<br>
+          <input type="checkbox" name="toppings"  value="Pepperoni">Pepperoni<br>
+          <input type="checkbox" name="toppings"  value="Sausage">Sausage<br>
+          <input type="checkbox" name="toppings"  value="Pineapple">Pineapple<br>
+          <input type="checkbox" name="toppings"  value="Artichoke">Artichoke<br>
+          <input type="checkbox" name="toppings"  value="Black Olives">Black Olives<br>
+          <input type="checkbox" name="toppings"  value="Bell Pepper">Bell Pepper<br>
+          <input type="checkbox" name="toppings"  value="Red Onion">Red Onion<br>
+          <input type="checkbox" name="toppings"  value="Mushrooms">Mushrooms<br>
+          <input type="checkbox" name="toppings"  value="Spinach">Spinach<br>
+          <input type="checkbox" name="toppings"  value="Garlic">Garlic<br>
           </label>
         </div>
         <button type="submit" name="button">Make my pizza!</button>
