@@ -28,14 +28,22 @@ Pizza.prototype.pizzaPrice = function(size, toppingsArray){
   }
 }
 }
+
+
+
+
+
+
+
+
+
+
+
 //UI Logic
 $(document).ready(function(){
   $("form.form").submit(function(event){
     debugger;
     event.preventDefault();
-    $("input:checkbox[name=size]:checked").each(function(){
-      var sizes = parseInt($(this).val());
-    });
 
     $("input:checkbox[name=topping]:checked").each(function(){
       var toppings = parseInt($(this).val());
@@ -44,12 +52,13 @@ $(document).ready(function(){
           newToppings.push(toppings[i].val());
       }
 
-      var newPizza = new Pizza (toppings, price, sizes)
-      var price = newPizza.pizzaPrice(sizes, newToppings);
-      var output = newPizza.cost(sizes, newToppings, price);
-      $("#receipt").show();
-      $(".form").hide();
-    });
 
+
+      $(".results").show();
+      $(".form").hide();
+
+
+
+    });
   });
 });
